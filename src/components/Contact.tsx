@@ -5,18 +5,21 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { AfricanPattern } from "./AfricanPattern";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut", // ✅ properly typed
+    },
+  },
+};
 
 export function Contact() {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  };
-
   return (
     <section className="py-24 min-h-[150vh] bg-gradient-to-br from-stone-900 via-amber-900/20 to-stone-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
