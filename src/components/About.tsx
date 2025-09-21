@@ -70,7 +70,7 @@ export function About() {
             <p className="text-xl text-stone-600 leading-relaxed">
               BTX Capital Limited is a private company incorporated in Kenya,
               strategically evolving into a publicly listed Crypto Asset
-              Treasury Company.
+              Treasury Company in Kenya.
             </p>
             <p className="text-lg text-stone-600 leading-relaxed">
               We pioneer the integration of blockchain technology and AI in
