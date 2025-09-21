@@ -84,7 +84,7 @@ export function Hero({ onNavigate }: HeroProps) {
             >
               Kenya's first publicly listed Crypto Asset Treasury Company,
               integrating blockchain technology and AI to revolutionize digital
-              asset management, investment banking and Web3 innovation.
+              asset management, investment banking, and Web3 innovation.
             </motion.p>
 
             {/* CTAs */}
