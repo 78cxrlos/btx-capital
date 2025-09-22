@@ -152,7 +152,8 @@ export function Contact() {
                 <div>
                   <div className="text-lg text-white mb-1">Visit Us</div>
                   <div className="text-amber-400">
-                    Riverside Drive, Westlands, Nairobi
+                    Head Office: 1007 N Orange St. 4th Floor  Suite #4778, Wilmington, Delaware 19801, United States                    Riverside Drive, Westlands, Nairobi
+                    Nairobi Office: Riverside Drive, Westlands, Kenya 
                     <br />
                     Kenya
                   </div>
