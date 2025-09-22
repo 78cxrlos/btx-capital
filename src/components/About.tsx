@@ -61,20 +61,20 @@ export function About() {
             variants={fadeInUp}
             className="text-4xl lg:text-6xl text-stone-900 leading-tight"
           >
-            East Africa's First Listed
+            East Africa's First Private
             <br />
-            <span className="text-amber-700">Crypto Asset Treasury</span>
+            <span className="text-amber-700">Virtual Asset Wealth Managment Co.</span>
           </motion.h2>
 
           <motion.div variants={fadeInUp} className="max-w-3xl mx-auto space-y-6">
             <p className="text-xl text-stone-600 leading-relaxed">
-              BTX Capital Limited is a private company incorporated in Kenya,
-              strategically evolving into a publicly listed Crypto Asset
+              BTX Capital Limited is a private wealth management company incorporated in Kenya,
+              with strategic ambitions of evolving into a publicly listed Virtual Asset
               Treasury Company in Kenya.
             </p>
             <p className="text-lg text-stone-600 leading-relaxed">
               We pioneer the integration of blockchain technology and AI in
-              fund management—a first in Kenya—setting new standards for
+              fund management—a first in East Africa—setting new standards for
               innovation in the financial sector.
             </p>
           </motion.div>
