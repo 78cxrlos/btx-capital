@@ -98,7 +98,7 @@ export function Contact() {
                 <div>
                   <div className="text-lg text-white mb-1">Email Us</div>
                   <div className="text-amber-400">
-                    partnerships@btx-capital.co.ke
+                    connect@btx-capital.com
                   </div>
                 </div>
               </div>
@@ -121,8 +121,8 @@ export function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-lg text-white mb-1">Call Us</div>
-                  <div className="text-amber-400">+254 700 123 456</div>
+                  <div className="text-lg text-white mb-1">Whats App</div>
+                  <div className="text-amber-400">+254 721 843 249</div>
                 </div>
               </div>
 
@@ -152,7 +152,7 @@ export function Contact() {
                 <div>
                   <div className="text-lg text-white mb-1">Visit Us</div>
                   <div className="text-amber-400">
-                    Westlands, Nairobi
+                    Riverside Drive, Westlands, Nairobi
                     <br />
                     Kenya
                   </div>
@@ -255,9 +255,9 @@ export function Contact() {
                 What services does BTX Capital provide?
               </h4>
               <p className="text-stone-100">
-                We offer Digital Investment Banking, Crypto Fund Management,
+                We offer Private Digital Investment Banking, Private Virtual Asset Fund Management,
                 Blockchain & Web3 Advisory, and Web3 Incubation services across
-                Kenya and East Africa.
+                Kenya and East Africa. Our Ambition is to be the first listed Virtual Asset Treasury in East Africa subject to regulatory approvals
               </p>
             </div>
             <div className="space-y-4">
@@ -277,7 +277,7 @@ export function Contact() {
               <p className="text-stone-100">
                 Enterprises seeking Web3 transformation, governments exploring
                 blockchain infrastructure, startups needing incubation, and
-                institutions requiring treasury services.
+                institutions requiring treasury services. We currently do not offer services to retail clients.
               </p>
             </div>
             <div className="space-y-4">
@@ -285,9 +285,8 @@ export function Contact() {
                 What makes BTX Capital unique?
               </h4>
               <p className="text-stone-100">
-                As Kenya&apos;s pioneering publicly listed Crypto Asset Treasury
-                Company, we combine treasury security with investment banking
-                dynamism and Web3 innovation.
+                As Kenya&apos;s first private digital asset wealth management company, we are in a good position to be the first publicly listed Virtual Asset Treasury
+                Company after regulatory approval.
               </p>
             </div>
           </div>
