@@ -121,8 +121,8 @@ export function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-lg text-white mb-1">Whats App</div>
-                  <div className="text-amber-400">+254 721 843 249</div>
+                  <div className="text-lg text-white mb-1">Call Us</div>
+                  <div className="text-amber-400"> - </div>
                 </div>
               </div>
 
