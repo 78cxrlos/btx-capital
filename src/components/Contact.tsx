@@ -152,8 +152,8 @@ export function Contact() {
                 <div>
                   <div className="text-lg text-white mb-1">Visit Us</div>
                   <div className="text-amber-400">
-                    Head Office: 1007 N Orange St. 4th Floor  Suite #4778, Wilmington, Delaware 19801, United States
-                    Nairobi Office: Riverside Drive, Westlands, Kenya 
+                    Head Office: BTX Treasury Group Corp., 1007 N Orange St. 4th Floor  Suite #4778, Wilmington, Delaware 19801, United States
+                    Nairobi Office: BTX Capital Limited, Riverside Drive, Westlands, Kenya 
                     <br />
                     Kenya
                   </div>
