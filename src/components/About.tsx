@@ -68,7 +68,7 @@ export function About() {
 
           <motion.div variants={fadeInUp} className="max-w-3xl mx-auto space-y-6">
             <p className="text-xl text-stone-600 leading-relaxed">
-              BTX Capital Limited is a private wealth management company incorporated in Kenya,
+              BTX Capital Limited is a private virtual asset wealth management company incorporated in Kenya,
               with strategic ambitions of evolving into a publicly listed Virtual Asset
               Treasury Company in Kenya.
             </p>
