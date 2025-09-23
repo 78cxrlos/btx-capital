@@ -78,7 +78,7 @@ export function Footer({ onNavigate }: FooterProps) {
             BTX<span className="text-amber-400">Capital</span>
           </div>
           <p className="text-amber-400 uppercase font-semibold tracking-wider md:text-lg">
-            East Africa's First Private Wealth Management Company with strategic ambitions of evolving into the East Africa's First Publicly Listed Virtual Asset
+            East Africa's First Private Digital Asset Management Company with strategic ambitions of evolving into East Africa's First Publicly Listed Digital Asset
               Treasury Company.          </p>
         </motion.div>
 
