@@ -60,7 +60,7 @@ export function Hero({ onNavigate }: HeroProps) {
             >
               <div className="w-12 h-1 bg-gradient-to-r from-amber-600 to-orange-600 rounded-full"></div>
               <span className="text-stone-600 tracking-wider uppercase">
-                East Africa's First Private Virtual Asset Wealth Manager
+                East Africa's First Private Digital Asset Wealth Manager
               </span>
               <div className="w-12 h-1 bg-gradient-to-r from-orange-600 to-amber-600 rounded-full"></div>
             </motion.div>
@@ -82,9 +82,9 @@ export function Hero({ onNavigate }: HeroProps) {
               variants={fadeInUp}
               className="text-xl lg:text-2xl text-stone-600 leading-relaxed max-w-3xl mx-auto"
             >
-              East Africa's first Private Wealth Management Company, with ambitions to graduate into East Africa's First Publicly listed Virtual Asset Treasury Company,
+              East Africa's first Private Digital Asset Management Company, with ambitions to graduate into East Africa's First Publicly listed Digital Asset Treasury Company,
               integrating blockchain technology and AI to revolutionize digital
-              asset management, investment banking, and Web3 innovation.
+              asset management, digital corporate finance, digital asset-backed lending solutions and Web3 innovation.
             </motion.p>
 
             {/* CTAs */}
