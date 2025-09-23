@@ -63,14 +63,14 @@ export function About() {
           >
             East Africa's First Private
             <br />
-            <span className="text-amber-700">Virtual Asset Wealth Managment Co.</span>
+            <span className="text-amber-700">Digital Asset Wealth Managment Co.</span>
           </motion.h2>
 
           <motion.div variants={fadeInUp} className="max-w-3xl mx-auto space-y-6">
             <p className="text-xl text-stone-600 leading-relaxed">
-              BTX Capital Limited is a private virtual asset wealth management company incorporated in Kenya,
-              with strategic ambitions of evolving into a publicly listed Virtual Asset
-              Treasury Company in Kenya.
+              BTX Capital Limited is a privately held virtual asset wealth management company incorporated in Kenya. 
+              It operates as a strategic subsidiary of BTX Treasury Group Corp., a group holding company registered in Delaware, USA.
+              BTX Capital is positioning itself at the forefront of Africa’s digital finance evolution, with the long-term ambition of becoming a publicly listed Digital Asset Treasury Company in Kenya—offering institutional-grade digital asset management, treasury services, and compliant investment solutions across emerging markets.
             </p>
             <p className="text-lg text-stone-600 leading-relaxed">
               We pioneer the integration of blockchain technology and AI in
@@ -101,16 +101,16 @@ export function About() {
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[ // turn services into a map for animation
               {
-                title: "Digital Investment Banking",
-                desc: "Specialized services in crypto fund structuring, tokenized products, and digital asset capital markets.",
+                title: "Digital Corporate Finance",
+                desc: "Providing expert guidance in fund structuring, issuance of tokenized financial products, and capital formation through regulated digital asset markets.",
               },
               {
-                title: "Crypto Fund Management",
+                title: "Digital Asset Fund Management",
                 desc: "Institutional-grade portfolio strategies across Bitcoin, Ethereum, Solana, and curated digital indices.",
               },
               {
-                title: "Blockchain & Web3 Advisory",
-                desc: "Supporting enterprises, governments, and startups in token economics, regulatory navigation, and infrastructure design.",
+                title: "Asset-Backed Lending Using Digital Assets",
+                desc: "Unlock liquidity without selling your holdings. Flexible loan solutions secured by Bitcoin, Ethereum, Solana, and other major digital assets—bridging DeFi efficiency with institutional compliance.",
               },
               {
                 title: "Web3 Incubation Hub",
