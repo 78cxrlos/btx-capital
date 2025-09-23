@@ -64,16 +64,13 @@ export function Contact() {
               <h2 className="text-4xl lg:text-5xl leading-tight">
                 Partner with{" "}
                 <span className="text-amber-400">
-                  Kenya&apos;s Premier Crypto Treasury
+                  Kenya&apos;s Premier Digital Asset Manager
                 </span>
               </h2>
             </div>
 
             <p className="text-lg text-stone-100 leading-relaxed">
-              Whether you&apos;re an enterprise seeking Web3 advisory, a startup
-              looking for incubation, or an institution ready for digital asset
-              treasury services, our expert team is here to guide your
-              transformation.
+              Whether launching, scaling, or evolving, we empower forward-thinking organizations—enterprises, startups, and institutions—to navigate and thrive in the digital asset economy.
             </p>
 
             {/* Contact Methods */}
