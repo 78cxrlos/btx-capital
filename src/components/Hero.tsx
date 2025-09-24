@@ -69,10 +69,10 @@ export function Hero({ onNavigate }: HeroProps) {
             <motion.div variants={fadeInUp} className="space-y-4">
               <h1 className="text-5xl lg:text-8xl text-stone-900 tracking-tight leading-tight font-light">
                 <span className="text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-amber-800 bg-clip-text font-normal tracking-wider uppercase">
-                  Pioneering Digital Asset
+                  Where Digital Assets 
                 </span>
                 <span className="block text-stone-900 font-light tracking-normal normal-case">
-                  Treasury Excellence
+                  Meet Institutional Trust
                 </span>
               </h1>
             </motion.div>
