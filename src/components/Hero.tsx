@@ -82,9 +82,10 @@ export function Hero({ onNavigate }: HeroProps) {
               variants={fadeInUp}
               className="text-xl lg:text-2xl text-stone-600 leading-relaxed max-w-3xl mx-auto"
             >
-              East Africa's first Private Digital Asset Management Company, with ambitions to graduate into East Africa's First Publicly listed Digital Asset Treasury Company,
-              integrating blockchain technology and AI to revolutionize digital
-              asset management, digital corporate finance, digital asset-backed lending solutions and Web3 innovation.
+              East Africa’s First Private Digital Asset Management Company, exclusively serving corporate and institutional clients. With a bold vision to evolve 
+              into East Africa’s First Publicly Listed Digital Asset Treasury Company, we integrate blockchain technology and AI to revolutionize: Digital Asset Management, 
+              Digital Corporate Finance, Digital Asset-Backed Lending and Web3 Innovation. We do not offer retail services. 
+              Our bespoke solutions are tailored for private clients, enterprises, and institutional investors who demand security, sophistication, and strategic digital asset exposure.
             </motion.p>
 
             {/* CTAs */}
