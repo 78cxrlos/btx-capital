@@ -47,25 +47,25 @@ export default function Services() {
 
         {/* Intro Text */}
         <motion.p variants={item} className="text-lg text-stone-700 mb-12">
-          At <span className="font-semibold">BTX Capital</span>, we provide a
-          range of financial and investment services designed to help you grow
-          and protect your wealth. Explore our tailored solutions below.
+          At <span className="font-semibold">BTX Capital</span>, we provide a range of financial and investment services to private clients, 
+          enterprises, and institutional investors who demand security, sophistication, and strategic digital asset exposure. 
+          Explore our tailored solutions below.
         </motion.p>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {[
             {
-              title: "Investment Advisory",
-              desc: "Get expert guidance on building a strong investment portfolio aligned with your financial goals.",
+              title: "Digital Asset Management",
+              desc: "We provide secure, institutional-grade management of digital asset portfolios tailored for private clients seeking long-term value and strategic exposure.",
             },
             {
-              title: "Wealth Management",
-              desc: "Comprehensive strategies to grow, manage, and preserve your assets effectively.",
+              title: "Digital Corporate Finance",
+              desc: "We structure and execute innovative capital solutions using tokenized assets, smart contracts, and blockchain rails to modernize fundraising, M&A, and corporate restructuring.",
             },
             {
-              title: "Risk Assessment",
-              desc: "Identify and manage potential risks to make secure financial decisions.",
+              title: "Digital Asset-Backed Lending",
+              desc: "We offer bespoke credit solutions where clients can unlock liquidity by using their digital assets—such as Bitcoin, Ethereum, or tokenized securities—as collateral.",
             },
           ].map((service, idx) => (
             <motion.div
@@ -85,12 +85,12 @@ export default function Services() {
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {[
             {
-              title: "Retirement Planning",
-              desc: "Plan your retirement efficiently to ensure long-term financial stability.",
+              title: "Web3 Innovation",
+              desc: "We empower enterprises to navigate and capitalize on Web3 through strategic advisory, token design, smart contract architecture, and decentralized infrastructure deployment.",
             },
             {
-              title: "Tax Optimization",
-              desc: "Strategize your finances to optimize taxes legally and save more money.",
+              title: "Digital Asset Treasury",
+              desc: "We intend to become East Africa’s first Digital Asset Treasury (DAT)—building a blockchain-native treasury through strategic allocation in Digital Assets and yield-generating protocols, with a strong focus on governance, risk, and compliance.",
             },
           ].map((service, idx) => (
             <motion.div
