@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import { Navigation } from "./components/Navigation";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -6,10 +8,12 @@ import Services from "./components/Services";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { LoadingScreen } from "./components/LoadingScreen";
+import { News } from "./components/News";
+import { Dashboard } from "./admin/Dashboard";
 
-type ActiveSection = "home" | "about" | "services" | "contact";
+type ActiveSection = "home" | "about" | "services" | "contact" | "news";
 
-export default function App() {
+function MainSite() {
   const [activeSection, setActiveSection] = useState<ActiveSection>("home");
   const [showFooter, setShowFooter] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +31,6 @@ export default function App() {
     if (section !== activeSection) {
       setIsLoading(true);
 
-      // Set loading message
       switch (section) {
         case "home":
           setLoadingMessage("btx-capital");
@@ -40,6 +43,9 @@ export default function App() {
           break;
         case "contact":
           setLoadingMessage("Contact us");
+          break;
+        case "news":
+          setLoadingMessage("Latest News");
           break;
       }
 
@@ -69,7 +75,6 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Shared page classes for non-contact sections
   const pageClasses =
     "w-full min-h-screen px-6 md:px-12 lg:px-24 pt-20 pb-96 transition-opacity duration-700";
 
@@ -94,10 +99,15 @@ export default function App() {
           </div>
         );
       case "contact":
-        // Contact: add extra bottom padding so footer doesn’t cover content
         return (
           <div className="w-full min-h-screen transition-opacity duration-700 pb-[40vh]">
             <Contact />
+          </div>
+        );
+      case "news":
+        return (
+          <div className={pageClasses}>
+            <News />
           </div>
         );
       default:
@@ -111,7 +121,7 @@ export default function App() {
 
   return (
     <div className="relative">
-      {/* Navigation: hide when footer appears */}
+      {/* Navigation */}
       <div
         className={`transition-opacity duration-700 ${
           showFooter
@@ -136,7 +146,7 @@ export default function App() {
         {renderPage()}
       </div>
 
-      {/* Full-screen Footer */}
+      {/* Footer */}
       <div
         className={`fixed inset-0 transition-all duration-700 ${
           showFooter ? "opacity-100 translate-y-0" : "opacity-0 translate-y-24"
@@ -145,5 +155,18 @@ export default function App() {
         <Footer onNavigate={handleNavigation} />
       </div>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Router basename="/btx-capital">
+      <Routes>
+        {/* Admin site must come first */}
+        <Route path="/admin/*" element={<Dashboard />} />
+        {/* Main site */}
+        <Route path="/*" element={<MainSite />} />
+      </Routes>
+    </Router>
   );
 }

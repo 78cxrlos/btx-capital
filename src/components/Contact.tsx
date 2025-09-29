@@ -70,7 +70,9 @@ export function Contact() {
             </div>
 
             <p className="text-lg text-stone-100 leading-relaxed">
-              Whether launching, scaling, or evolving, we empower forward-thinking organizations—enterprises, startups, and institutions—to navigate and thrive in the digital asset economy.
+              Whether launching, scaling, or evolving, we empower
+              forward-thinking organizations—enterprises, startups, and
+              institutions—to navigate and thrive in the digital asset economy.
             </p>
 
             {/* Contact Methods */}
@@ -94,9 +96,7 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-lg text-white mb-1">Email Us</div>
-                  <div className="text-amber-400">
-                    connect@btx-capital.com
-                  </div>
+                  <div className="text-amber-400">connect@btx-capital.com</div>
                 </div>
               </div>
 
@@ -148,11 +148,21 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-lg text-white mb-1">Visit Us</div>
-                  <div className="text-amber-400">
-                    Head Office: BTX Treasury Group Corp., 1007 N Orange St. 4th Floor  Suite #4778, Wilmington, Delaware 19801, United States
-                    Nairobi Office: BTX Capital Limited, Riverside Drive, Westlands, Kenya 
-                    <br />
-                    Kenya
+                  <div className="text-amber-400 space-y-4">
+                    <p>
+                      <strong>Group Address:</strong> <br />
+                      BTX Treasury Group Corp. <br />
+                      1007 N Orange St. 4th Floor Suite #4778 <br />
+                      Wilmington, Delaware 19801 <br />
+                      United States.
+                    </p>
+
+                    <p>
+                      <strong>Nairobi Address:</strong> <br />
+                      BTX Capital Limited <br />
+                      Riverside Drive <br />
+                      Nairobi, Kenya.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -253,9 +263,11 @@ export function Contact() {
                 What services does BTX Capital provide?
               </h4>
               <p className="text-stone-100">
-                We offer Private Digital Investment Banking, Private Virtual Asset Fund Management,
-                Blockchain & Web3 Advisory, and Web3 Incubation services across
-                Kenya and East Africa. Our Ambition is to be the first listed Virtual Asset Treasury in East Africa subject to regulatory approvals
+                We offer Private Digital Investment Banking, Private Virtual
+                Asset Fund Management, Blockchain & Web3 Advisory, and Web3
+                Incubation services across Kenya and East Africa. Our Ambition
+                is to be the first listed Virtual Asset Treasury in East Africa
+                subject to regulatory approvals
               </p>
             </div>
             <div className="space-y-4">
@@ -275,7 +287,8 @@ export function Contact() {
               <p className="text-stone-100">
                 Enterprises seeking Web3 transformation, governments exploring
                 blockchain infrastructure, startups needing incubation, and
-                institutions requiring treasury services. We currently do not offer services to retail clients.
+                institutions requiring treasury services. We currently do not
+                offer services to retail clients.
               </p>
             </div>
             <div className="space-y-4">
@@ -283,8 +296,9 @@ export function Contact() {
                 What makes BTX Capital unique?
               </h4>
               <p className="text-stone-100">
-                As Kenya&apos;s first private digital asset wealth management company, we are in a good position to be the first publicly listed Virtual Asset Treasury
-                Company after regulatory approval.
+                As Kenya&apos;s first private digital asset wealth management
+                company, we are in a good position to be the first publicly
+                listed Virtual Asset Treasury Company after regulatory approval.
               </p>
             </div>
           </div>

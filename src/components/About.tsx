@@ -1,6 +1,5 @@
 "use client";
 
-import { Card, CardContent } from "./ui/card";
 import { AfricanPattern } from "./AfricanPattern";
 import { motion, type Variants } from "framer-motion";
 
@@ -69,7 +68,7 @@ export function About() {
           <motion.div variants={fadeInUp} className="max-w-3xl mx-auto space-y-6">
             <p className="text-xl text-stone-600 leading-relaxed">
               BTX Capital Limited is a privately held virtual asset wealth management company incorporated in Kenya. 
-              It operates as a strategic subsidiary of BTX Treasury Group Corp., a group holding company registered in Delaware, USA.
+              It operates as a strategic subsidiary of BTX Treasury Group Corp. a group holding company registered in Delaware, USA.
               BTX Capital is positioning itself at the forefront of Africa’s digital finance evolution, with the long-term ambition of becoming a publicly listed Digital Asset Treasury Company in Kenya—offering institutional-grade digital asset management, treasury services, and compliant investment solutions across emerging markets.
             </p>
             <p className="text-lg text-stone-600 leading-relaxed">
@@ -78,66 +77,6 @@ export function About() {
               innovation in the financial sector.
             </p>
           </motion.div>
-        </motion.div>
-
-        {/* Core Services */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="mb-24"
-        >
-          <motion.div variants={fadeInUp} className="space-y-4 mb-16">
-            <h3 className="text-3xl lg:text-4xl text-stone-900">
-              Core <span className="text-amber-700">Services</span>
-            </h3>
-            <p className="text-lg text-stone-600 max-w-2xl mx-auto">
-              Comprehensive solutions driving the future of digital finance in
-              East Africa
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {[ // turn services into a map for animation
-              {
-                title: "Digital Corporate Finance",
-                desc: "Providing expert guidance in fund structuring, issuance of tokenized financial products, and capital formation through regulated digital asset markets.",
-              },
-              {
-                title: "Digital Asset Fund Management",
-                desc: "Institutional-grade portfolio strategies across Bitcoin, Ethereum, Solana, and curated digital indices.",
-              },
-              {
-                title: "Asset-Backed Lending Using Digital Assets",
-                desc: "Unlock liquidity without selling your holdings. Flexible loan solutions secured by Bitcoin, Ethereum, Solana, and other major digital assets—bridging DeFi efficiency with institutional compliance.",
-              },
-              {
-                title: "Web3 Incubation Hub",
-                desc: "Accelerating early-stage blockchain projects through capital, technical mentorship, and strategic partnerships.",
-              },
-            ].map((service, i) => (
-              <motion.div key={i} variants={fadeInUp}>
-                <Card className="group hover:shadow-xl transition-all duration-300 border-stone-200/50 bg-white/90 backdrop-blur-sm hover:bg-white">
-                  <CardContent className="p-8 text-center">
-                    <div className="space-y-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <div className="w-8 h-8 bg-amber-600 rounded-full"></div>
-                      </div>
-                      <div>
-                        <h4 className="text-xl text-stone-900 mb-3">
-                          {service.title}
-                        </h4>
-                        <p className="text-stone-600 leading-relaxed">
-                          {service.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
 
         {/* Strategic Advantages */}
