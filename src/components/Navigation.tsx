@@ -34,14 +34,13 @@ export function Navigation({ onNavigate, activeSection }: NavigationProps) {
 
   const handleNavigate = (section: ActiveSection) => {
     onNavigate(section);
-    setIsMenuOpen(false); // close menu after selecting
+    setIsMenuOpen(false);
   };
 
-  // ✅ Now includes "news"
   const sections: ActiveSection[] = ["home", "about", "services", "news", "contact"];
 
   return (
-    <nav className="w-full bg-white/95 backdrop-blur-sm border-b border-amber-100/20 sticky top-0 z-50">
+    <nav className="w-full bg-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -112,10 +111,7 @@ export function Navigation({ onNavigate, activeSection }: NavigationProps) {
 
       {/* Mobile dropdown */}
       {isMenuOpen && (
-        <div
-          ref={menuRef}
-          className="md:hidden bg-white/95 backdrop-blur-sm border-t border-amber-100/20"
-        >
+        <div ref={menuRef} className="md:hidden bg-white">
           <div className="px-4 pt-4 pb-6 space-y-2">
             {sections.map((section) => (
               <button
