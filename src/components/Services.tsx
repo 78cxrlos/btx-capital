@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import { AfricanPattern } from "./AfricanPattern";
 
 const container: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -28,10 +29,15 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="min-h-screen flex flex-col items-center justify-start bg-gradient-to-b from-amber-50 to-white px-6 py-20"
+      className="min-h-screen flex flex-col items-center justify-start bg-transparent relative overflow-hidden px-6 py-20"
     >
+      {/* Full subtle background pattern overlay */}
+      <div className="absolute inset-0 text-amber-600/15 pointer-events-none">
+        <AfricanPattern className="w-full h-full" pattern="geometric" />
+      </div>
+
       <motion.div
-        className="max-w-5xl text-center w-full"
+        className="max-w-5xl text-center w-full relative z-10"
         variants={container}
         initial="hidden"
         whileInView="visible"

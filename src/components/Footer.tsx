@@ -78,13 +78,10 @@ export function Footer({ onNavigate }: FooterProps) {
           variants={fadeInUp}
           className="space-y-6 flex flex-col items-center"
         >
-          <motion.div
-            variants={scaleIn}
-            className="relative w-64 md:w-80"
-          >
+          <motion.div variants={scaleIn} className="relative w-64 md:w-80">
             {/* Glow background */}
             <div className="absolute inset-0 rounded-2xl bg-white/10 blur-2xl -z-10" />
-            
+
             {/* Logo */}
             <img
               src={btxGroupImage}
@@ -110,13 +107,21 @@ export function Footer({ onNavigate }: FooterProps) {
             <motion.button
               key={section}
               variants={fadeInUp}
-              onClick={() => onNavigate(section as ActiveSection)}
+              onClick={() => {
+                if (section === "contact") {
+                  const contactSection = document.getElementById("contact");
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                } else {
+                  onNavigate(section as ActiveSection);
+                }
+              }}
               className="relative group"
             >
               <span className="transition-colors duration-300 group-hover:text-gray-200">
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </span>
-              {/* underline effect */}
               <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full" />
             </motion.button>
           ))}

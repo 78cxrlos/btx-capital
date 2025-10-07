@@ -50,7 +50,7 @@ export function Hero({ onNavigate }: HeroProps) {
             variants={container}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }} // <-- Trigger every time in view
             className="text-center space-y-8 max-w-4xl"
           >
             {/* Accent */}

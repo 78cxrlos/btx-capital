@@ -24,8 +24,13 @@ const fadeInUp: Variants = {
 
 export function About() {
   return (
-    <section className="pb-16 min-h-[150vh] bg-transparent relative">
-      {/* Subtle background patterns */}
+    <section className="pb-16 min-h-[150vh] bg-transparent relative overflow-hidden">
+      {/* Full subtle background pattern overlay (same as Hero) */}
+      <div className="absolute inset-0 text-amber-600/15 pointer-events-none">
+        <AfricanPattern className="w-full h-full" pattern="geometric" />
+      </div>
+
+      {/* Subtle floating patterns */}
       <div className="absolute left-10 w-24 h-24 text-stone-200/10 animate-float">
         <AfricanPattern className="w-full h-full" pattern="tribal" />
       </div>
@@ -43,7 +48,7 @@ export function About() {
           variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }} // trigger every scroll
           className="space-y-8 mb-20"
         >
           <motion.div variants={fadeInUp} className="space-y-6">
@@ -84,7 +89,7 @@ export function About() {
           variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.2 }}
           className="space-y-16"
         >
           <motion.div variants={fadeInUp} className="space-y-4">
@@ -130,7 +135,7 @@ export function About() {
           variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           className="mt-24 space-y-8"
         >
           <motion.div

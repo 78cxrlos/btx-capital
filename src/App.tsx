@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import { Navigation } from "./components/Navigation";
 import { Hero } from "./components/Hero";
@@ -11,148 +12,126 @@ import { LoadingScreen } from "./components/LoadingScreen";
 import { News } from "./components/News";
 import { Dashboard } from "./admin/Dashboard";
 
-type ActiveSection = "home" | "about" | "services" | "contact" | "news";
+type ActiveSection = "home" | "about" | "services" | "news" | "contact";
 
 function MainSite() {
   const [activeSection, setActiveSection] = useState<ActiveSection>("home");
-  const [showFooter, setShowFooter] = useState(false);
+  const [prevSection, setPrevSection] = useState<ActiveSection>("home");
   const [isLoading, setIsLoading] = useState(true);
-  const [loadingMessage, setLoadingMessage] = useState("btx-capital");
+  const [showFooter, setShowFooter] = useState(false);
 
-  // Hide initial loading screen after 1 second
+  const homeRef = useRef<HTMLDivElement | null>(null);
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const servicesRef = useRef<HTMLDivElement | null>(null);
+  const newsRef = useRef<HTMLDivElement | null>(null);
+  const contactRef = useRef<HTMLDivElement | null>(null);
+
+  const sectionRefs: Record<ActiveSection, React.RefObject<HTMLDivElement | null>> = {
+    home: homeRef,
+    about: aboutRef,
+    services: servicesRef,
+    news: newsRef,
+    contact: contactRef,
+  };
+
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
+    const timer = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
   const handleNavigation = (section: ActiveSection) => {
     if (section !== activeSection) {
-      setIsLoading(true);
+      setPrevSection(activeSection);
+      setActiveSection(section);
 
-      switch (section) {
-        case "home":
-          setLoadingMessage("btx-capital");
-          break;
-        case "about":
-          setLoadingMessage("About us");
-          break;
-        case "services":
-          setLoadingMessage("Our Services");
-          break;
-        case "contact":
-          setLoadingMessage("Contact us");
-          break;
-        case "news":
-          setLoadingMessage("Latest News");
-          break;
+      // Smooth scroll
+      sectionRefs[section].current?.scrollIntoView({ behavior: "smooth" });
+
+      // Trigger footer animation if navigating to Contact
+      if (section === "contact") {
+        setShowFooter(true);
       }
-
-      setTimeout(() => {
-        setActiveSection(section);
-        setIsLoading(false);
-        setShowFooter(false);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 1000);
     }
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const docHeight = document.body.offsetHeight;
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-      if (scrollY + windowHeight >= docHeight - 200) {
-        setShowFooter(true);
-      } else {
-        setShowFooter(false);
+      (Object.keys(sectionRefs) as ActiveSection[]).forEach((section) => {
+        const ref = sectionRefs[section].current;
+        if (ref) {
+          const offsetTop = ref.offsetTop;
+          const offsetBottom = offsetTop + ref.offsetHeight;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section);
+          }
+        }
+      });
+
+      // Show footer when Contact is in view
+      if (contactRef.current) {
+        const contactTop = contactRef.current.offsetTop;
+        setShowFooter(window.scrollY + window.innerHeight >= contactTop + 100);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const pageClasses =
-    "w-full min-h-screen px-6 md:px-12 lg:px-24 pt-20 pb-96 transition-opacity duration-700";
-
-  const renderPage = () => {
-    switch (activeSection) {
-      case "home":
-        return (
-          <div className={pageClasses}>
-            <Hero onNavigate={handleNavigation} />
-          </div>
-        );
-      case "about":
-        return (
-          <div className={pageClasses}>
-            <About />
-          </div>
-        );
-      case "services":
-        return (
-          <div className={pageClasses}>
-            <Services />
-          </div>
-        );
-      case "contact":
-        return (
-          <div className="w-full min-h-screen transition-opacity duration-700 pb-[40vh]">
-            <Contact />
-          </div>
-        );
-      case "news":
-        return (
-          <div className={pageClasses}>
-            <News />
-          </div>
-        );
-      default:
-        return null;
-    }
-  };
+    "w-full min-h-screen px-6 md:px-12 lg:px-24 pt-20 transition-opacity duration-700";
 
   if (isLoading) {
-    return <LoadingScreen message={loadingMessage} />;
+    return <LoadingScreen message="btx-capital" />;
   }
 
   return (
     <div className="relative">
-      {/* Navigation */}
-      <div
-        className={`transition-opacity duration-700 ${
-          showFooter
-            ? "opacity-0 pointer-events-none"
-            : "opacity-100 pointer-events-auto"
-        }`}
-      >
-        <Navigation
-          onNavigate={handleNavigation}
-          activeSection={activeSection}
-        />
+      {/* Fixed Navigation */}
+      <div className="fixed top-0 left-0 w-full z-50 bg-stone-900/80 backdrop-blur-md">
+        <Navigation onNavigate={handleNavigation} activeSection={activeSection} />
       </div>
 
       {/* Page content */}
-      <div
-        className={`transition-opacity duration-700 ${
-          showFooter
-            ? "opacity-0 pointer-events-none"
-            : "opacity-100 pointer-events-auto"
-        }`}
-      >
-        {renderPage()}
-      </div>
+      <div className="transition-opacity duration-700 relative z-0 pt-20">
+        <div ref={homeRef} className={pageClasses}>
+          <Hero onNavigate={handleNavigation} />
+        </div>
+        <div ref={aboutRef} className={pageClasses}>
+          <About />
+        </div>
+        <div ref={servicesRef} className={pageClasses}>
+          <Services />
+        </div>
+        <div ref={newsRef} className={pageClasses + " pb-32"}>
+          <News />
+        </div>
 
-      {/* Footer */}
-      <div
-        className={`fixed inset-0 transition-all duration-700 ${
-          showFooter ? "opacity-100 translate-y-0" : "opacity-0 translate-y-24"
-        }`}
-      >
-        <Footer onNavigate={handleNavigation} />
+        {/* Contact section full width */}
+        <motion.div
+          ref={contactRef}
+          className="w-full min-h-screen pt-20 pb-0"
+          initial={{
+            opacity: prevSection === "news" ? 0 : 1,
+            y: prevSection === "news" ? 50 : 0,
+          }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <Contact />
+        </motion.div>
+
+        {/* Footer slides up dynamically */}
+        <motion.div
+          className="w-full"
+          initial={{ opacity: 0, y: 50 }}
+          animate={showFooter ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <Footer onNavigate={handleNavigation} />
+        </motion.div>
       </div>
     </div>
   );
@@ -162,9 +141,7 @@ export default function App() {
   return (
     <Router basename="/btx-capital">
       <Routes>
-        {/* Admin site must come first */}
         <Route path="/admin/*" element={<Dashboard />} />
-        {/* Main site */}
         <Route path="/*" element={<MainSite />} />
       </Routes>
     </Router>
