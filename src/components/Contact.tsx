@@ -167,22 +167,6 @@ export function Contact() {
                 </div>
               </div>
             </div>
-
-            {/* Social Links */}
-            <div className="space-y-4 pt-8 border-t border-amber-600/20">
-              <div className="text-stone-200">Follow Us</div>
-              <div className="flex space-x-4">
-                {["LinkedIn", "Twitter", "Telegram"].map((platform) => (
-                  <a
-                    key={platform}
-                    href="#"
-                    className="w-10 h-10 bg-amber-600/20 rounded-lg flex items-center justify-center text-amber-400 hover:bg-amber-600/30 transition-colors"
-                  >
-                    {platform[0]}
-                  </a>
-                ))}
-              </div>
-            </div>
           </motion.div>
 
           {/* Contact Form */}

@@ -140,7 +140,7 @@ export function Footer({ onNavigate }: FooterProps) {
           </motion.a>
           <motion.a
             variants={scaleIn}
-            href="https://twitter.com/btxcapital"
+            href="https://x.com/BtxConnect"
             target="_blank"
             rel="noopener noreferrer"
             className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300"
