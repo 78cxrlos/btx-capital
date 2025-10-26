@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { Navigation } from "./components/Navigation";
@@ -11,6 +11,7 @@ import { Footer } from "./components/Footer";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { News } from "./components/News";
 import { Dashboard } from "./admin/Dashboard";
+import { AdminLogin } from "./admin/AdminLogin"; // ✅ import login component
 
 type ActiveSection = "home" | "about" | "services" | "news" | "contact";
 
@@ -43,11 +44,8 @@ function MainSite() {
     if (section !== activeSection) {
       setPrevSection(activeSection);
       setActiveSection(section);
-
-      // Smooth scroll
       sectionRefs[section].current?.scrollIntoView({ behavior: "smooth" });
 
-      // Trigger footer animation if navigating to Contact
       if (section === "contact") {
         setShowFooter(true);
       }
@@ -69,7 +67,6 @@ function MainSite() {
         }
       });
 
-      // Show footer when Contact is in view
       if (contactRef.current) {
         const contactTop = contactRef.current.offsetTop;
         setShowFooter(window.scrollY + window.innerHeight >= contactTop + 100);
@@ -89,12 +86,10 @@ function MainSite() {
 
   return (
     <div className="relative">
-      {/* Fixed Navigation */}
       <div className="fixed top-0 left-0 w-full z-50 bg-stone-900/80 backdrop-blur-md">
         <Navigation onNavigate={handleNavigation} activeSection={activeSection} />
       </div>
 
-      {/* Page content */}
       <div className="transition-opacity duration-700 relative z-0 pt-20">
         <div ref={homeRef} className={pageClasses}>
           <Hero onNavigate={handleNavigation} />
@@ -109,7 +104,6 @@ function MainSite() {
           <News />
         </div>
 
-        {/* Contact section full width */}
         <motion.div
           ref={contactRef}
           className="w-full min-h-screen pt-20 pb-0"
@@ -123,7 +117,6 @@ function MainSite() {
           <Contact />
         </motion.div>
 
-        {/* Footer slides up dynamically */}
         <motion.div
           className="w-full"
           initial={{ opacity: 0, y: 50 }}
@@ -138,10 +131,20 @@ function MainSite() {
 }
 
 export default function App() {
+  // ✅ Check JWT token
+  const isAuthenticated = !!localStorage.getItem("token");
+
   return (
     <Router basename="/btx-capital">
       <Routes>
-        <Route path="/admin/*" element={<Dashboard />} />
+        {/* ✅ Admin section routes */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route
+          path="/admin/*"
+          element={isAuthenticated ? <Dashboard /> : <Navigate to="/admin/login" replace />}
+        />
+
+        {/* ✅ Main public site */}
         <Route path="/*" element={<MainSite />} />
       </Routes>
     </Router>
