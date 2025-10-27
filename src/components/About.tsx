@@ -74,7 +74,7 @@ export function About() {
             <p className="text-xl text-stone-600 leading-relaxed">
               BTX Capital Limited is a privately held virtual asset wealth management company incorporated in Kenya. 
               It operates as a strategic subsidiary of BTX Treasury Group Corp. a group holding company registered in Delaware, USA.
-              BTX Capital is positioning itself at the forefront of Africa’s digital finance evolution, with the long-term ambition of becoming a publicly listed Digital Asset Treasury Company in Kenya—offering institutional-grade digital asset management, treasury services, and compliant investment solutions across emerging markets.
+              BTX Capital is positioning itself at the forefront of Africa’s digital finance evolution, with the short-term ambition of becoming a publicly listed Digital Asset Treasury Company in Kenya—offering institutional-grade digital asset management, treasury services, and compliant investment solutions across emerging markets.
             </p>
             <p className="text-lg text-stone-600 leading-relaxed">
               We pioneer the integration of blockchain technology and AI in
