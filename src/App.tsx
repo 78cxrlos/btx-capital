@@ -11,7 +11,7 @@ import { Footer } from "./components/Footer";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { News } from "./components/News";
 import { Dashboard } from "./admin/Dashboard";
-import { AdminLogin } from "./admin/AdminLogin"; // ✅ import login component
+import { AdminLogin } from "./admin/AdminLogin";
 
 type ActiveSection = "home" | "about" | "services" | "news" | "contact";
 
@@ -131,20 +131,20 @@ function MainSite() {
 }
 
 export default function App() {
-  // ✅ Check JWT token
+  // Check JWT token
   const isAuthenticated = !!localStorage.getItem("token");
 
   return (
-    <Router basename="/btx-capital">
+    <Router basename="/"> {/* Root-relative basename to match vite base: './' */}
       <Routes>
-        {/* ✅ Admin section routes */}
+        {/* Admin section routes */}
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route
           path="/admin/*"
           element={isAuthenticated ? <Dashboard /> : <Navigate to="/admin/login" replace />}
         />
 
-        {/* ✅ Main public site */}
+        {/* Main public site */}
         <Route path="/*" element={<MainSite />} />
       </Routes>
     </Router>
