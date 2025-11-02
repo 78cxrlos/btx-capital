@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // Ensure the base URL is always a string
-const BASE = import.meta.env.VITE_API_BASE_URL ?? "https://btx-backend-4.onrender.com/api";
+const BASE = import.meta.env.VITE_API_BASE_URL ?? "https://btx-backend-6.onrender.com";
 
 const api = axios.create({
   baseURL: BASE,
