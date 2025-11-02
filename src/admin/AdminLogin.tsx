@@ -26,7 +26,7 @@ export function AdminLogin() {
       }
       localStorage.setItem("token", token);
       // simple redirect to admin dashboard route
-      window.location.href = "admin"; 
+      window.location.href = "/admin"; 
     } catch (err: any) {
       setError(err?.response?.data?.msg || err?.response?.data?.error || "Invalid credentials");
       console.error(err);

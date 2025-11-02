@@ -154,7 +154,7 @@ export function Dashboard() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    window.location.href = "/btx-capital/admin/login";
+    window.location.href = "/admin";
   };
 
   return (

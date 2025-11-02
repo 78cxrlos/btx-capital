@@ -131,16 +131,14 @@ function MainSite() {
 }
 
 export default function App() {
-  // Check JWT token
   const isAuthenticated = !!localStorage.getItem("token");
 
   return (
-    <Router basename="/"> {/* Root-relative basename to match vite base: './' */}
+    <Router basename="/"> {/* ✅ Correct base path */}
       <Routes>
-        {/* Admin section routes */}
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route
-          path="/admin/*"
+          path="/admin"
           element={isAuthenticated ? <Dashboard /> : <Navigate to="/admin/login" replace />}
         />
 
