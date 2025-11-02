@@ -131,7 +131,7 @@ export function Footer({ onNavigate }: FooterProps) {
         <motion.div variants={container} className="flex space-x-6">
           <motion.a
             variants={scaleIn}
-            href="https://linkedin.com/company/btx-capital"
+            href="https://www.linkedin.com/company/btx-cap-limited/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300"
